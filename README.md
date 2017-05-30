@@ -9,6 +9,6 @@
 * npm install
 * npm run dev
 
-启动浏览器，输入 http://localhost/#/
+启动浏览器，输入http://localhost/#/
 
 默认使用80端口，可以修改config/index.js修改服务器监听端口
