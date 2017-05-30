@@ -11,7 +11,8 @@ app.component('home', {
 HomeController.$inject = ['$q']
 
 function HomeController ($q) {
-  console.log('ggg')
+  let $ctrl = this
+  $ctrl.msg = 'Hello Angularjs'
 }
 
 export default app

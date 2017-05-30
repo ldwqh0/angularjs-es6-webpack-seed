@@ -4,9 +4,7 @@ import app from '../app'
 let component = {
   controller: AppController,
   template: `<ui-view class="app-content"></ui-view>`,
-  bindings: {
-    Binding: '='
-  }
+  bindings: {}
 }
 
 AppController.inject = []
