@@ -1,7 +1,7 @@
 {
   "name": "web",
-  "version": "1.0.0",
-  "description": "土壤项目",
+  "version": "0.0.1",
+  "description": "Angularjs es6 webpack seed",
   "main": "index.js",
   "scripts": {
     "dev": "node ./build/dev-server",
