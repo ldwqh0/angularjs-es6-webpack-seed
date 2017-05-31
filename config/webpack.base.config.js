@@ -1,7 +1,8 @@
 let webpack = require('webpack')
 let autoprefixer = require('autoprefixer')
+let path = require('path')
 module.exports = {
-  entry: { app: './src/main.js' },
+  entry: { app: path.resolve(__dirname, '../src/main.js') },
   module: {
     rules: [
       {
