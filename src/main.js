@@ -1,4 +1,2 @@
-import app from './app'
-import route from './router'
+import './app'
 import './components/app-component'
-app.config(route)
