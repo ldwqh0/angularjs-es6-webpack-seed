@@ -5,13 +5,9 @@ export default ['$stateProvider', '$locationProvider', function ($stateProvider,
     url: '/',
     component: 'home',
     resolve: {
-      component: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-        return $q(resolve => {
-          require.ensure([], function () {
-            require('../components/home')
-            $ocLazyLoad.load({ name: 'app' })
-            resolve()
-          })
+      component: ['$ocLazyLoad', function ($ocLazyLoad) {
+        return require(['../components/home'], () => {
+          $ocLazyLoad.inject('app')
         })
       }]
     }
