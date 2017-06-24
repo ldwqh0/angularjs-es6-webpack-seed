@@ -6,8 +6,11 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 let CopyWebpackPlugin = require('copy-webpack-plugin')
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+let config = require('./index')
+
 module.exports = merge(baseConfig, {
   output: {
+    publicPath: config.dev.publicPath,
     path: path.resolve(__dirname, '../dist'),
     filename: 'static/js/[name].[hash].js',
     chunkFilename: 'static/js/[id].[hash].js'
