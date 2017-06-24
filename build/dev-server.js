@@ -28,7 +28,7 @@ app.use(require('connect-history-api-fallback')())
 app.use(devMiddleware)
 app.use(hotMiddleware)
 
-app.use(config.dev.publicPath + '/static', express.static('./static'))
+app.use(config.dev.publicPath + 'static', express.static('./static'))
 
 console.log('> Starting dev server...')
 
