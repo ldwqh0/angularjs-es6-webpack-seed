@@ -1,5 +1,7 @@
 // 导入全局样式
 import './css/style.css'
+import './css/test.less'
+import './css/test.scss'
 // 导入项目全局依赖
 import 'es6-promise/auto'
 import angular from 'angular'

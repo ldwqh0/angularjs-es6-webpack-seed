@@ -4,7 +4,6 @@ let config = require('../config')
 let proxyTable = config.dev.proxyTable
 let webpack = require('webpack')
 let webPackConfig = require('../config/webpack.dev.config')
-let path = require('path')
 let app = express()
 let compiler = webpack(webPackConfig)
 

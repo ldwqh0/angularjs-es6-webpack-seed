@@ -7,10 +7,9 @@ let CopyWebpackPlugin = require('copy-webpack-plugin')
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 let config = require('./index')
-
 module.exports = merge(baseConfig, {
   output: {
-    publicPath: config.dev.publicPath,
+    publicPath: config.prod.publicPath,
     path: path.resolve(__dirname, '../dist'),
     filename: 'static/js/[name].[hash].js',
     chunkFilename: 'static/js/[id].[hash].js'
@@ -70,12 +69,10 @@ module.exports = merge(baseConfig, {
         )
       }
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: 'static',
-        ignore: ['.*']
-      }
-    ])
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../static'),
+      to: 'static',
+      ignore: ['.*']
+    }])
   ]
 })
