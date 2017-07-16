@@ -27,12 +27,6 @@ module.exports = merge(baseConfig, {
         fallback: 'style-loader',
         use: ['css-loader', 'less-loader']
       })
-    }, {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader']
-      })
     }]
   },
   plugins: [
