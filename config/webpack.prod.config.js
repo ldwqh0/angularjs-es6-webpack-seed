@@ -30,11 +30,11 @@ module.exports = merge(baseConfig, {
     }]
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'static/css/[hash].css' }),
+    new ExtractTextPlugin({filename: 'static/css/[hash].css'}),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
+      cssProcessorOptions: {discardComments: {removeAll: true}},
       canPrint: true
     }),
     new webpack.optimize.UglifyJsPlugin({
@@ -48,19 +48,6 @@ module.exports = merge(baseConfig, {
       minify: {
         removeComments: true,
         collapseWhitespace: true
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module, count) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
-          ) === 0
-        )
       }
     }),
     new CopyWebpackPlugin([{
