@@ -5,6 +5,10 @@ import './css/test.less'
 import * as vendor from './vendor'
 // 导入路由配置
 import route from './router'
-const app = vendor.angular.module('app', [vendor.uiRouter, vendor.oclazyload])
+
+const app = vendor.angular.module('app', [
+  vendor.uiRouter,
+  vendor.oclazyload
+])
 app.config(route)
 export default app
