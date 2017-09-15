@@ -5,7 +5,7 @@
 项目基于AngularJS1.5+ component模式
 
 请按照以下顺序启动项目
-* git clone https://github.com/ldwqh0/angularjs-es6-webpack-seed
+* git clone https://github.com/ldwqh0/angularjs-es6-webpack-seed.git
 * npm install  如果是再中国大陆，最好使用npm install --registry=https://registry.npm.taobao.org来安装依赖
 * npm run dev
 

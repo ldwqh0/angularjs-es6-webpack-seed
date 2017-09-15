@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angularjs es6 webpack seed",
   "main": "index.js",
   "scripts": {
