@@ -8,7 +8,8 @@ import route from './router'
 
 const app = vendor.angular.module('app', [
   vendor.uiRouter,
-  vendor.oclazyload
+  vendor.oclazyload,
+  vendor.ngResourcce
 ])
 app.config(route)
 export default app

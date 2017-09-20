@@ -1,5 +1,14 @@
 import app from '../app'
 import template from './home.html'
+
+class HomeController {
+  static $inject = ['$q']
+
+  constructor ($q) {
+    this.msg = 'Hello Angularjs'
+  }
+}
+
 app.component('home', {
   controller: HomeController,
   template,
@@ -7,12 +16,5 @@ app.component('home', {
     Binding: '='
   }
 })
-
-HomeController.$inject = ['$q']
-
-function HomeController ($q) {
-  let $ctrl = this
-  $ctrl.msg = 'Hello Angularjs'
-}
 
 export default app
