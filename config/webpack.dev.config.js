@@ -21,6 +21,7 @@ module.exports = merge(baseConfig, {
     }]
   },
   plugins: [
+    // 热替换插件
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({

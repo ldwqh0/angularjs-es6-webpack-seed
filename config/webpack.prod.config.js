@@ -30,18 +30,23 @@ module.exports = merge(baseConfig, {
     }]
   },
   plugins: [
+    // 文本拆分插件，单独拆分css文件
     new ExtractTextPlugin({filename: 'static/css/[hash].css'}),
+    // css压缩插件
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
       cssProcessorOptions: {discardComments: {removeAll: true}},
       canPrint: true
     }),
+    // js压缩插件
     new webpack.optimize.UglifyJsPlugin({
+      mangle: true, // 是否启用代码混淆
       compress: {
         warnings: false
       }
     }),
+    // html文件生成插件
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
@@ -50,10 +55,11 @@ module.exports = merge(baseConfig, {
         collapseWhitespace: true
       }
     }),
+    // 静态资源复杂插件，用于将静态资源复复制到指定目录
     new CopyWebpackPlugin([{
       from: path.resolve(__dirname, '../static'),
       to: 'static',
-      ignore: ['.*']
+      ignore: ['.*'] // 忽略没有文件名的文件
     }])
   ]
 })
