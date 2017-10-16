@@ -4,7 +4,8 @@ let path = require('path')
 let config = require('./index')
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/main.js'),
+    app: path.resolve(__dirname, '../src/app.js'),
+    main: path.resolve(__dirname, '../src/main.js'),
     vendor: path.resolve(__dirname, '../src/vendor.js')
   },
   output: {
@@ -43,7 +44,7 @@ module.exports = {
      按照入口分包
      */
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'boot']
+      name: ['main', 'app', 'vendor']
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
