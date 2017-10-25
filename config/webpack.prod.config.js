@@ -11,8 +11,8 @@ module.exports = merge(baseConfig, {
   output: {
     publicPath: config.prod.publicPath,
     path: path.resolve(__dirname, '../dist'),
-    filename: 'static/js/[name].[hash].js',
-    chunkFilename: 'static/js/[id].[hash].js'
+    filename: 'static/js/[name].[chunkhash].js',
+    chunkFilename: 'static/js/[id].[chunkhash].js'
   },
   module: {
     rules: [{
@@ -31,7 +31,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     // 文本拆分插件，单独拆分css文件
-    new ExtractTextPlugin({filename: 'static/css/[hash].css'}),
+    new ExtractTextPlugin({filename: 'static/css/[name].[chunkhash].css'}),
     // css压缩插件
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
