@@ -9,7 +9,10 @@ import route from './router'
 const app = vendor.angular.module('app', [
   vendor.uiRouter,
   vendor.oclazyload,
-  vendor.ngResourcce
+  vendor.ngResourcce,
+  vendor.ngSanitize,
+  vendor.ngAnimate,
+  vendor.ngUi
 ])
 app.config(route)
 export default app

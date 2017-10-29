@@ -3,13 +3,20 @@
  */
 import 'babel-polyfill'
 import angular from 'angular'
+import 'angular-i18n/zh-cn' //导入angular中文资源
+import ngSanitize from 'angular-sanitize'
 import uiRouter from '@uirouter/angularjs'
 import oclazyload from 'oclazyload'
 import ngResourcce from 'angular-resource'
+import ngAnimate from 'angular-animate'
+import ngUi from 'angular-ui-bootstrap'
 
 export {
   angular,
   uiRouter,
   oclazyload,
-  ngResourcce
+  ngResourcce,
+  ngSanitize,
+  ngAnimate,
+  ngUi
 }
