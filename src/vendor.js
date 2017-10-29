@@ -9,7 +9,6 @@ import uiRouter from '@uirouter/angularjs'
 import oclazyload from 'oclazyload'
 import ngResourcce from 'angular-resource'
 import ngAnimate from 'angular-animate'
-import ngUi from 'angular-ui-bootstrap'
 
 export {
   angular,
@@ -18,5 +17,4 @@ export {
   ngResourcce,
   ngSanitize,
   ngAnimate,
-  ngUi
 }

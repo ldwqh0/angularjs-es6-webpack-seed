@@ -11,8 +11,7 @@ const app = vendor.angular.module('app', [
   vendor.oclazyload,
   vendor.ngResourcce,
   vendor.ngSanitize,
-  vendor.ngAnimate,
-  vendor.ngUi
+  vendor.ngAnimate
 ])
 app.config(route)
 export default app
