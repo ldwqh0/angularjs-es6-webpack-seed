@@ -1,5 +1,4 @@
 import app from '../app'
-import template from './home.html'
 
 class HomeController {
   static $inject = ['$q']
@@ -11,7 +10,7 @@ class HomeController {
 
 app.component('home', {
   controller: HomeController,
-  template,
+  templateUrl: './home.html',
   bindings: {
     Binding: '='
   }
