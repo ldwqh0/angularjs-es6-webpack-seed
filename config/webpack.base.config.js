@@ -16,7 +16,7 @@ module.exports = {
       {
         // babel转码加载器
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        use: [{loader: 'babel-loader'}, {loader: 'angularjs-template-loader'}],
         exclude: [/node_modules/] // 数组中的文件将不会被转码。
       }, {
         test: /\.html$/,
