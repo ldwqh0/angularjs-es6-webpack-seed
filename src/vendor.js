@@ -4,7 +4,7 @@
 import 'babel-polyfill'
 import angular from 'angular'
 import 'bootstrap/less/bootstrap.less'
-import 'angular-i18n/zh-cn' //导入angular中文资源
+import 'angular-i18n/zh-cn' // 导入angular中文资源
 import ngSanitize from 'angular-sanitize'
 import uiRouter from '@uirouter/angularjs'
 import oclazyload from 'oclazyload'
@@ -17,5 +17,5 @@ export {
   oclazyload,
   ngResourcce,
   ngSanitize,
-  ngAnimate,
+  ngAnimate
 }
