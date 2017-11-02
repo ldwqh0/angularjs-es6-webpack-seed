@@ -31,7 +31,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     // 文本拆分插件，单独拆分css文件
-    new ExtractTextPlugin({filename: 'static/css/[name].[chunkhash].css'}),
+    new ExtractTextPlugin({filename: 'static/css/[name].[contenthash].css', allChunks: true}),
     // css压缩插件
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,

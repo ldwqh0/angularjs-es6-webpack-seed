@@ -12,32 +12,35 @@ module.exports = {
     publicPath: config.dev.publicPath
   },
   module: {
-    rules: [
-      {
-        // babel转码加载器
-        test: /\.jsx?$/,
-        use: [{loader: 'babel-loader'}, {loader: 'angularjs-template-loader'}],
-        exclude: [/node_modules/] // 数组中的文件将不会被转码。
-      }, {
-        test: /\.html$/,
-        loader: 'html-loader'
-      }, {
-        // url资源加载器
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000, // 小于该限制的文件将被base64编码到js文件中
-          name: 'static/img/[name].[hash:7].[ext]'
-        }
-      }, {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'static/fonts/[name].[hash:7].[ext]'
-        }
+    rules: [{
+      test: /\.jsx?$/,
+      enforce: 'pre',
+      loader: 'eslint-loader',
+      exclude: [/node_modules/]
+    }, {
+      // babel转码加载器
+      test: /\.jsx?$/,
+      use: [{loader: 'babel-loader'}, {loader: 'angularjs-template-loader'}],
+      exclude: [/node_modules/] // 数组中的文件将不会被转码。
+    }, {
+      test: /\.html$/,
+      loader: 'html-loader'
+    }, {
+      // url资源加载器
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000, // 小于该限制的文件将被base64编码到js文件中
+        name: 'static/img/[name].[hash:7].[ext]'
       }
-    ]
+    }, {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        name: 'static/fonts/[name].[hash:7].[ext]'
+      }
+    }]
   },
   plugins: [
     /*
