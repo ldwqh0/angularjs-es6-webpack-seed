@@ -5,10 +5,10 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 let config = require('../config')
 let path = require('path')
 
-Object.keys(baseConfig.entry).forEach(function (name) {
-  baseConfig.entry[name] = ['webpack-hot-middleware/client?reload=true'].concat(baseConfig.entry[name])
-})
 module.exports = merge(baseConfig, {
+  output: {
+    filename: '[name].js'
+  },
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: true,
@@ -43,10 +43,10 @@ module.exports = merge(baseConfig, {
   plugins: [
     // 热替换插件
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
+      inject: true
     })
   ]
 })

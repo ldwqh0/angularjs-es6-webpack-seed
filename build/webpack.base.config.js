@@ -1,15 +1,11 @@
 let webpack = require('webpack')
 let autoprefixer = require('autoprefixer')
 let path = require('path')
-let config = require('../config/index')
 module.exports = {
   entry: {
     app: path.resolve(__dirname, '../src/app.js'),
     main: path.resolve(__dirname, '../src/main.js'),
     vendor: path.resolve(__dirname, '../src/vendor.js')
-  },
-  output: {
-    publicPath: config.dev.publicPath
   },
   module: {
     rules: [{
