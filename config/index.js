@@ -12,6 +12,7 @@ module.exports = {
     },
     staticTable: {
       // 可以将一些静态资源的映射添加到这里
+      'arcgisAPI': 'D:\\arcigsapi'
     }
   },
   prod: {

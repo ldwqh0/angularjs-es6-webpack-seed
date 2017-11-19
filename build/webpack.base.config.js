@@ -1,7 +1,7 @@
 let webpack = require('webpack')
 let autoprefixer = require('autoprefixer')
 let path = require('path')
-let config = require('./index')
+let config = require('../config/index')
 module.exports = {
   entry: {
     app: path.resolve(__dirname, '../src/app.js'),

@@ -4,9 +4,9 @@
   "description": "Angularjs es6 webpack seed",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./build/dev-server",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && webpack --progress --colors --config config/webpack.prod.config"
+    "build": "rimraf dist && webpack --progress --colors --config build/webpack.prod.config"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -45,6 +46,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.9.4",
     "webpack-hot-middleware": "^2.20.0",
     "webpack-merge": "^4.1.0"
   },

@@ -6,7 +6,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 let CopyWebpackPlugin = require('copy-webpack-plugin')
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-let config = require('./index')
+let config = require('../config')
 module.exports = merge(baseConfig, {
   output: {
     publicPath: config.prod.publicPath,
