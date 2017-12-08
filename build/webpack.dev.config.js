@@ -4,7 +4,7 @@ let webpack = require('webpack')
 let HtmlWebpackPlugin = require('html-webpack-plugin')
 let config = require('../config')
 let path = require('path')
-
+let FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 module.exports = merge(baseConfig, {
   output: {
     filename: '[name].js'
@@ -43,10 +43,12 @@ module.exports = merge(baseConfig, {
   plugins: [
     // 热替换插件
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html',
       inject: true
-    })
+    }),
+    new FriendlyErrorsPlugin()
   ]
 })
